@@ -17,7 +17,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: flask-pvc    
+  name: flask-pvc-1    
 spec:
   accessModes:
     - ReadWriteMany
