@@ -10,7 +10,7 @@ spec:
   accessModes:
     - ReadWriteMany
   nfs:
-    path:  /srv/nfs/mosinsmj-225         #your MiamiID
+    path:  /srv/nfs/mosinsmj         #your MiamiID
     server: 10.48.10.140
   persistentVolumeReclaimPolicy: Retain
 ---
@@ -46,7 +46,7 @@ spec:
     spec:
       containers:
         - name: flask
-          image: cithit/mosinsmj-225    #your MiamiID
+          image: cithit/mosinsmj    #your MiamiID
           ports:
             - containerPort: 5000
           volumeMounts:
@@ -55,7 +55,7 @@ spec:
       volumes:
         - name: nfs-storage
           persistentVolumeClaim:
-            claimName: flask-pvc    
+            claimName: flask-pvc-1    
 ---
 apiVersion: v1
 kind: Service
